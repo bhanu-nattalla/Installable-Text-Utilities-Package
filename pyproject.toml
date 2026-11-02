@@ -1,0 +1,34 @@
+[project]
+name = "textutils"
+version = "0.1.0"
+description = "Small text utilities: tokenizer, cleaner, word counter"
+readme = "README.md"
+authors = [
+    { name = "bhanu-nattalla", email = "bhanunattala@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "pytest>=9.2.0",
+]
+
+[project.scripts]
+textutils = "textutils.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "mypy",
+    "ruff",
+    "pytest",
+]
+
+[tool.ruff]
+line-length = 88
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+strict = true
